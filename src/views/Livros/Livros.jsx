@@ -11,7 +11,7 @@ const Livros = () => {
 
   async function getLivros(){
     const {data} = await LivrosService.getLivros();
-    setLivros(data)
+    setLivros(data.books)
   }
 
   async function deleteLivro(livroId){
@@ -41,8 +41,8 @@ const Livros = () => {
         <ul>
         {livros.map((livro) =>(
           <li key={livro.id}>
-            {livro.titulo} 
-            <span>{livro.editora}</span>
+            {livro.title} 
+            <span>{livro.publishing_company}</span>
             <div className='botoes'>
               <div>
                 <Link className='btn edit' to={`/livros/edicao/${livro.id}`}>
@@ -61,7 +61,6 @@ const Livros = () => {
             </div>
             </li>
         ))}
-
         </ul>
     </div>
   </>)

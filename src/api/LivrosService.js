@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3000"
-
+// const BASE_URL = "http://localhost:3000" 
+const BASE_URL = "https://dnc-desafio-5-back.vercel.app"
 export class LivrosService{
     static getLivros(){
         return axios.get(BASE_URL+'/livros');
@@ -24,3 +24,7 @@ export class LivrosService{
     }
     
 }
+
+
+
+ 
